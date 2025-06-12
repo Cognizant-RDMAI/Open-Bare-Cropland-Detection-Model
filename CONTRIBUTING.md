@@ -1,38 +1,29 @@
-# Contributing to Bare Cropland Detection Model
-
-We welcome you to contribute to this project! This repository [`OpenBareCroplandDetectionModel`] contains a Google Earth Engine (GEE) script that identifies and analyzes bare cropland across seasons using Sentinel-2 imagery. Your contributions - whether through code, documentation, or ideas - are highly appreciated.
-
-## How to Contribute
+# Contributor Guidelines
+At this time, we do not provide a Contributor License Agreement (CLA). By submitting feedback or suggestions, you grant us permission to use and incorporate your input into the project, where appropriate. All contributions will be reviewed by the internal team, and only those deemed feasible and value-adding will be considered.
 
 ### Reporting Issues
-
-If you find a bug or unexpected behaviour:
-
-- Open an issue with a clear title and description.
-- Include steps to reproduce the issue.
-- Share screenshots or logs if possible.
+If you encounter a bug or have a technical concern, please report it by opening a GitHub Issue. When reporting, please include:
+ - A clear and descriptive title
+ - A detailed explanation of the issue or suggestion
+ - Steps to reproduce the problem (if applicable)
+ - Any relevant logs, screenshots, or error messages
+   
+[Click here to report an issue](https://github.com/Cognizant-RDMAI/OpenBareCroplandDetectionModel/issues)
 
 ### Suggesting Enhancements
+We appreciate ideas for improving the model or the overall project. To suggest an enhancement:
+- Use a clear and concise title
+- Provide a detailed explanation of the suggestion
+- Describe the potential benefits or use cases
+- Share any examples, references, or mockups if available
 
-We welcome ideas to improve:
+### Code Contributions
+At this time, **external code contributions are not permitted**.
 
-- Index thresholds or seasonal definitions.
-- Visualization styles or export formats.
-- Performance optimizations or modularization.
+For internal contributors:
+ - Follow existing code structure and formatting practices
+ - Use meaningful commit messages
+ - Add comments where necessary, especially for non-trivial code logic
 
-## Code Guidelines
-
-- Use clear and descriptive variable names.
-- Comment your code, especially for formulas and logic.
-- Follow GEE coding best practices.
-
-## Data & Licensing
-
-- Sentinel-2 data is provided by Copernicus.
-- All scripts in this repository are released under the **MIT License**.
-- Please ensure any new datasets used are open and properly cited.
-
-## Code of Conduct
-
-We follow the [Contributor Covenant](https://www.contributor-covenant.org/) to foster an open and welcoming environment. Be respectful and constructive in all interactions.
+FYI: The standard Git Hub code of conduct is included here for reference https://www.contributor-covenant.org/
 

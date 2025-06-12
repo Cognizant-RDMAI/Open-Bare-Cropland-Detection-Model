@@ -268,11 +268,23 @@ Map.add(legendPanel);
 // 9. EXPORT DATASET
 // ==========================
 
-// Export the winter bare land mask to Google Drive
-Export.image.toDrive({
-  image: bareLandBSIWinter,
-  description: 'BSI_Mask_Winter_Bare_Land',
-  scale: 10,
-  region: studyArea.geometry(),
-  maxPixels: 1e9
+// Step 1: Mask the raster to include only pixels where value == 1
+var bareLandZone1 = bareLandBSIWinter.updateMask(bareLandBSIWinter.eq(1));
+
+
+// Step 2: Vectorize the masked raster
+var bareLandVectors = bareLandZone1.reduceToVectors({
+  geometry: studyArea.geometry(),
+  scale: 10,
+  geometryType: 'polygon',
+  labelProperty: 'zone',
+  maxPixels: 1e9
+});
+
+
+// Step 3: Export the vector as a shapefile
+Export.table.toDrive({
+  collection: bareLandVectors,
+  description: 'BSI_Mask_Winter_Bare_Land_Shapefile',
+  fileFormat: 'SHP'
 });
