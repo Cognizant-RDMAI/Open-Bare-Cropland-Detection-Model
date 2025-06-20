@@ -89,10 +89,9 @@ This method is commonly used in remote sensing to reduce noise (e.g., clouds, sh
 
 
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/5e7880d5-3636-483a-97c4-d7996a206d82" width="400"/>
+  <img src="./doc/fig1.png" width="400"/>
 </p>
-Figure 1. Illustration of creating satellite image composite
-
+Figure 1. Illustration of creating satellite image composite 
 
 The Figure 1 demonstrates how the satellite image composite is being generated. In the example above, each subplot shows a 3×3 image. The composite image (bottom right) is created by taking the median value at each pixel location across the three input images. The Table 2 highlights the advantages of using composite images over raw images.
 
@@ -126,7 +125,7 @@ In Google Earth Engine (GEE), composite images have been generated for agricultu
 #### 2.5.1. Crop mask
 This model requires a crop mask to run the model effectively and avoiding misclassification of other land use classes. In this work, we have opted to use the openly available farmland boundary data from OpenStreetMap (OSM) land cover data to isolate agricultural areas for analysis. This data, which includes polygons tagged as fclass = farmland, is extracted and converted into a vector layer (e.g., shapefile). In GEE, it is imported as a FeatureCollection and used to clip satellite imagery or mask out non-agricultural land, ensuring that remote sensing models focus only on cropland.
 
-<img width="511" alt="image" src="https://github.com/user-attachments/assets/c1b16e48-f081-44de-ad14-5a188162b8d3" />
+<img width="511" alt="image" src="./doc/fig2.png" />
 
 Figure 2. OSM farmland layer
 
@@ -139,7 +138,7 @@ While OSM is a valuable open-source platform maintained by a global community of
 #### 2.5.2. Integrating OSM Crop mask and CROME datasets
 The CROME dataset uses a hexagonal grid system to divide the landscape into uniform cells. This data has been enhanced by adding crop description. This layer has been combined with OSM crop mask layer to enhance the mask information.
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/5cb16ea0-0c4a-4010-80ea-e97466540750" /> 
+<img width="500" alt="image" src="./doc/fig3.png" /> 
 
 Figure 3. CROME dataset integrated with OSM farmland layer
 
@@ -148,7 +147,7 @@ Figure 3. CROME dataset integrated with OSM farmland layer
 #### 2.5.3. Incorporating Rainfall Data
 Historical rainfall data was downloaded from DEFRA's Hydrology Explorer for gauge stations located within each catchment. This ground-based data was then used in Google Earth Engine to compare with satellite-derived moisture indices like NDMI, enabling a more robust assessment of soil moisture variability and hydrological conditions. The current approach also applicable to integrate any other type of rainfall dataset as well.
 
-![image](https://github.com/user-attachments/assets/36184bec-bb26-45e2-938f-585beebdcef4)
+![image](./doc/fig4.png)
 
 Figure 4. Rainfall data
 
@@ -187,7 +186,7 @@ Where,
 #### Spectral Profiles for Surface Feature Analysis
 Spectral reflectance varies across the Green, Red, NIR, and SWIR bands depending on surface conditions. The following examples are taken from the Browney Catchment, an area predominantly used for agriculture. Histograms (Figure 5) were generated for both the summer and winter seasons of 2024 to analyze surface conditions in addition to index-based assessments.
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/7af6fcc3-e08b-4630-b70b-315b39a0d9a6" />   <img width="500" alt="image" src="https://github.com/user-attachments/assets/bb797302-20ea-46cb-979f-dc636e5480c8" />
+<img width="500" alt="image" src="./doc/fig5_summer.png" />   <img width="500" alt="image" src="./doc/fig5_winter.png" />
 
 Figure 5. Variations in spectral reflectance during summer and winter
 
@@ -276,7 +275,7 @@ These indices are often used as inputs for machine learning models, classificati
 
 #### Examples
 A demonstration is shown in the Figure 6, where the below image is the farmlands (Browney catchment, UK) false colour composite of three near infra-red, red and green bands from Sentinel 2 harmonized surface reflectance image and the image to its below is the extracted bare cropland in summer (blue areas) and winter (amber areas).
-<img src="https://github.com/user-attachments/assets/29e5d017-00b6-4443-bea7-2b2b60d82a4b" width="800"/>
+<img src="./doc/fig6.gif" width="800"/>
 
 Figure 6. Detected winter and summer bare cropland
 
@@ -287,7 +286,7 @@ To address this, the model incorporates a robust feature that utilizes spectral 
 #### 2.7.1. Weather Effects on Detection Accuracy
 The below Figure 7 (left image) demonstrated the impact of snow cover in the Browney Catchment (UK) during January 2023 on model output'. The image on the right shows the improvement in model predictions just a month later during the snow-free period.
 
-<img src="https://github.com/user-attachments/assets/a90a8d26-920a-412b-8cee-96013f87a816" width="800"/>
+<img src="./doc/fig7.png" width="800"/>
 
 Figure 7. Weather effects on detection accuracy
 
@@ -312,25 +311,25 @@ The garphs and tables below illustrate how weather conditions can significantly 
 #### Baseline Surface Reflectance in Absence of Weather Interference
 
 
-<img src="https://github.com/user-attachments/assets/d887f56e-ae29-4499-bd91-c939b4b739df" alt="image" width="700"/>
+<img src="./doc/fig8.png" alt="image" width="700"/>
 
 Figure 8. Baseline surface reflectance in absence of weather Interference
 
 Table 7. Comparing BSI with other indices
 
-<img src="https://github.com/user-attachments/assets/6fc7c9e3-1374-4761-9ec4-a72d92c342dc" alt="image" width="500"/>
+<img src="./doc/table%207.png" alt="image" width="500"/>
 
 
 
 #### Surface Reflectance Under Weather Influence
 
-<img src="https://github.com/user-attachments/assets/f5e3eec6-ef25-4527-8719-4aed9d71b579" alt="image" width="700"/>
+<img src="./doc/fig9.png" alt="image" width="700"/>
 
 Figure 9. Surface reflectance under weather Interference
 
 Table 8. Comparing BSI with other indices
 
-<img src="https://github.com/user-attachments/assets/61039ef8-ddce-4163-846d-08d403712cda" alt="image" width="500"/>
+<img src="./doc/table%208.png" alt="image" width="500"/>
 
 
 
@@ -341,7 +340,7 @@ For more details please visit [Steps To Follow](https://github.com/Cognizant-RDM
 ## 4. Model Evaluation
 A preliminary validation of the model was undertaken for the Browney catchment using a desktop-based accuracy assessment informed by visual interpretation. High-resolution Google Earth Pro imagery, temporally aligned with the Sentinel-2 acquisition period, was employed to verify model-detected bare cropland areas. Validation was performed by comparing reference points identified as bare cropland in the imagery against corresponding model predictions (Figure 10), with overall accuracy (Table 9) calculated as the proportion of reference points correctly classified by the model. While this initial assessment provides a preliminary indication of model performance, the limited sample size constrains the robustness of the evaluation. Consequently, further validation across additional catchments and at broader spatial scales is planned to enable a more comprehensive assessment of model accuracy.
 
-![image](https://github.com/user-attachments/assets/68b7277b-8798-440e-94cb-ac185fff57a1)
+![image](./doc/fig10.png)
 Figure 10. Comparing ground truth references with bare cropland detection (amber)
 
 Table 9. Accuracy assessment
