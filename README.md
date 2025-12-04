@@ -25,7 +25,7 @@ The primary purpose of this project is to develop a remote sensing-based model c
  - Dynamic land use mapping and environmental reporting
 
 The model is designed to function as a part of a fully scalable geospatial pipeline, it can be applied across catchments. It has the following core functions:
-
+   
 **Identification:** Identify bare cropland areas using spectral analysis of satellite imagery, primarily leveraging the Bare Soil Index (BSI) alongside other vegetation indices such as NDVI and SAVI.
 
 **Classification:** Differentiate bare soil from vegetated or non-agricultural surfaces using threshold-based classification of spectral indices, ensuring consistent and   objective interpretation.
@@ -33,6 +33,9 @@ The model is designed to function as a part of a fully scalable geospatial pipel
 **Integration:** Export results as GeoTIFF or Shape files compatible with GIS platforms like QGIS, ArcGIS, and Google Earth Engine.
 
 Unlike traditional field-based surveys or commercial licensed land use datasets — which are often infrequent, costly, and limited in resolution—this Open Bare Cropland Model offers a dynamic, cost-effective, and repeatable alternative. By utilizing open-access satellite imagery at 10m spatial resolultion, it empowers stakeholders with timely insights into land surface conditions, enhancing environmental stewardship and agricultural decision-making.
+
+### 1.4. Report Download
+Please download the Open Bare Cropland Model Report [HERE](./doc/Open%20Bare%20Cropland%20Model%20Report.pdf).
 
 ## 2. Installation Instructions
 To get started with the Bare cropland detection model:
@@ -335,12 +338,11 @@ Table 8. Comparing BSI with other indices
 
 ## 3. Running the model
 More details about this section can be found at ```INSTALL.md```
-For more details please visit [Steps To Follow](https://github.com/Cognizant-RDMAI/Open-Bare-Cropland-Detection-Model/blob/main/INSTALL.md#4-steps-to-follow)
+For more details please visit [Steps To Follow](./INSTALL.md#4-steps-to-follow)
 
 ## 4. Model Evaluation
 The model was validated across 19 catchments representing major soil types (British Geological Survey) in England, Wales, and Scotland, achieving an overall accuracy of above 80%.
- - Detailed performance metrics and overall accuracy are provided in the [model-card.md](https://github.com/Cognizant-RDMAI/BB2A-Identification-of-bare-cropland-from-satellite-images/blob/main/model-card.md)
- - Full review and validation report can be accessed [HERE](https://github.com/Cognizant-RDMAI/BB2A-Identification-of-bare-cropland-from-satellite-images/blob/main/doc/open_barecropland_review_and_report_V2.4.pdf).
+ - Detailed performance metrics and overall accuracy are provided in the [model-card.md](./model-card.md)
 
 
 ## 5. Conclusions
