@@ -338,43 +338,33 @@ More details about this section can be found at ```INSTALL.md```
 For more details please visit [Steps To Follow](https://github.com/Cognizant-RDMAI/Open-Bare-Cropland-Detection-Model/blob/main/INSTALL.md#4-steps-to-follow)
 
 ## 4. Model Evaluation
-A preliminary validation of the model was undertaken for the Browney catchment using a desktop-based accuracy assessment informed by visual interpretation. High-resolution Google Earth Pro imagery, temporally aligned with the Sentinel-2 acquisition period, was employed to verify model-detected bare cropland areas. Validation was performed by comparing reference points identified as bare cropland in the imagery against corresponding model predictions (Figure 10), with overall accuracy (Table 9) calculated as the proportion of reference points correctly classified by the model. While this initial assessment provides a preliminary indication of model performance, the limited sample size constrains the robustness of the evaluation. Consequently, further validation across additional catchments and at broader spatial scales is planned to enable a more comprehensive assessment of model accuracy.
-
-![image](./doc/fig10.png)
-Figure 10. Comparing ground truth references with bare cropland detection (amber)
-
-Table 9. Accuracy assessment
-|    | **Bare Cropland** | **Non-Bare Cropland** | **Total** |
-|-----------------------|---------------|-------------------|-----------|
-| **Actual: Bare Cropland** | 37            | 5                 | 42        |
-| **Overall Accuracy**  |               |                   | **88.1%** |
-
+The model was validated across 19 catchments representing major soil types (British Geological Survey) in England, Wales, and Scotland, achieving an overall accuracy of above 80%.
+ - Detailed performance metrics and overall accuracy are provided in the [model-card.md](https://github.com/Cognizant-RDMAI/BB2A-Identification-of-bare-cropland-from-satellite-images/blob/main/model-card.md)
+ - Full review and validation report can be accessed [HERE](https://github.com/Cognizant-RDMAI/BB2A-Identification-of-bare-cropland-from-satellite-images/blob/main/doc/open_barecropland_review_and_report_V2.4.pdf).
 
 
 ## 5. Conclusions
 ### Key Findings
- - Effective Discrimination: BSI efectively distinguishes between cropped and non-cropped land surfaces due to its sensitivity to soil reflectance in visible and shortwave infrared bands.
- - Seasonal Applicability: It detects bare cropland accross seasons.
- - Timeseries data of cropland can be generated across years at OSM parcel level.
- - The model, through the CROME crop layer, identifies crop types in bare cropland areas, which may support the assessment of erosion risk within the catchment.
- - Threshold-Based Classification: A well-calibrated threshold on BSI values enables automated detection of bare cropland areas from satellite imagery across seasons.
+ - Effective Discrimination: BSI effectively distinguishes bare cropland from vegetated and non-agricultural surfaces due to its sensitivity to soil reflectance in visible and shortwave infrared bands; a well-calibrated threshold of BSI enables automated detection of bare cropland areas from satellite imagery across seasons.
+ - An additional benefit of the model is the ability to generate timeseries data of bare and non-bare cropland across years at OSM land parcel level. 
+ - Identifying bare cropland can enhance understanding of erosion risk within a catchment, especially when combined with factors like soil type, slope, and rainfall intensity.
+
    
 ### Strengths
- - Simplicity: BSI is computationally simple, flexible and can be applied to a wide range of satellite data (e.g., Landsat, Sentinel-2 etc.).
- - High Sensitivity to Bare Soil: It captures soil brightness and dryness efectively, making it ideal for detecting exposed soil surfaces.
- - Scalability: Suitable for large-scale monitoring due to its low computational cost and compatibility with cloud-based platforms like Google Earth Engine.
- - Temporal Monitoring: Enables time-series analysis of cropland exposure and land use changes.
- - Flexibility: The model offers a highly adaptable approach—thresholds can be adjusted, new indices can be integrated, and existing ones can be modified. This flexibility makes it suitable for reuse and enhance the applicability across broader scale.
+ - Simplicity: BSI is computationally simple and can be applied to a wide range of satellite data (e.g., Landsat, Sentinel-2 etc.).
+ - High Sensitivity to Bare Soil: It captures soil brightness and dryness effectively, making it ideal for detecting exposed soil surfaces.
+ - Scalability: Suitable for large-scale monitoring by regulators like the Environment Agency. Google Earth Engine (GEE) incurs low computational cost as well because it leverages cloud-based parallel processing and free access to global datasets, eliminating the need for expensive hardware, software licenses, or data storage — making it highly cost-effective for both individuals and commercial users. 
+ - Temporal monitoring enables time-series analysis of bare soil across multiple land parcels, which can be compared over time and correlated with runoff, erosion, or nutrient leaching. This approach helps improve understanding of erosion risk during bare soil periods.
+ - Flexibility: The model offers a highly adaptable approach—thresholds can be adjusted, new indices can be integrated, and existing ones can be modified. This flexibility makes the model suitable for reuse and enhances its applicability across broader scales.
+
    
 ### Limitations
  - Soil Moisture and Snow Influence: Wet soils can alter reflectance, leading to underestimation of bare areas.
- - Consistent shadows in imagery can create accuracy issue in some locations.
- - Threshold Sensitivity: Fixed thresholds may not generalize well across regions with different soil types or land management practices.
- - OSM farmland data coverage varies acorss regions in UK, but alternative parcel level datasets can be integrated to support model execution.
+ - Threshold Sensitivity: Fixed thresholds may not generalise well across regions with different soil types or land management practices.
+ - OSM farmland data coverage varies across regions in UK, but alternative parcel level datasets can be integrated to support model execution.
  - The CROME crop type dataset is available only for England and may not be available for the most recent years, which may limit its applicability for current assessments. However, alternative crop classification datasets can be integrated to support model execution.
- - Model inputs are multiple GIS datasets which needs to be in valid coordinate system.
- - Successful model execution is guided by a set of prerequisites.
- 
+ - Model inputs consist of multiple GIS datasets that must be uploaded as Google Earth Engine (GEE) assets in a valid and consistent coordinate reference system (CRS). GEE does not automatically convert coordinate systems, so users must ensure all layers are correctly aligned before analysis to avoid spatial mismatches and ensure accurate results.
+
 ## 6. Disclaimer
 River Deep Mountain AI (“RDMAI”) consists of 10 parties. The parties currently participating in RDMAI are listed at the end of this section and they are collectively referred to in these terms as the “consortium”.
 
@@ -417,7 +407,7 @@ Users assume full responsibility for their use of the Software, validating the S
 #### 6. Consortium Members
 1. Northumbrian Water Limited
 2. Cognizant Worldwide Limited
-3. Xylem
+3. Xylem Water Solutions UK Limited
 4. Water Research Centre Limited
 5. RSK ADAS Limited
 6. The Rivers Trust
