@@ -35,7 +35,16 @@ The model is designed to function as a part of a fully scalable geospatial pipel
 Unlike traditional field-based surveys or commercial licensed land use datasets — which are often infrequent, costly, and limited in resolution—this Open Bare Cropland Model offers a dynamic, cost-effective, and repeatable alternative. By utilizing open-access satellite imagery at 10m spatial resolultion, it empowers stakeholders with timely insights into land surface conditions, enhancing environmental stewardship and agricultural decision-making.
 
 ### 1.4. Report Download
-Please download the Open Bare Cropland Model Report [HERE](./doc/Open%20Bare%20Cropland%20Model%20Report.pdf).
+Please download the Open Bare Cropland Model Report [HERE](https://github.com/Cognizant-RDMAI/Open-Bare-Cropland-Detection-Model/tree/main/doc).
+
+### Benchmark Download:
+
+River Deep Mountain AI models have been independently benchmarked by WRc and ADAS, against existing industry-standard tools. The benchmarking reports assess model performance, ‘ease-of-use’, time and cost requirements.Read the full report [here](https://github.com/Cognizant-RDMAI/Open-Bare-Cropland-Detection-Model/tree/main/doc).
+
+### Whitepaper Download:
+
+Please download the whitepaper [here](https://github.com/Cognizant-RDMAI/Open-Bare-Cropland-Detection-Model/tree/main/doc).
+
 
 ## 2. Installation Instructions
 To get started with the Bare cropland detection model:
